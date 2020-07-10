@@ -1,0 +1,268 @@
+script src="javascript.js" // подключаешь файл и путь в скобках   - вписываем в head когда подтягиваем файл
+-----------------------------------------------------------\
+когда пишем в html коде можно вписать в боди 
+<script> 
+рабочая зона
+</script>
+
+allert ("Hello World"); // выводит всплывающее окно с текстом на экран
+console.log (num) - выводит информацию в консоль.
+-------------------------------------------------------------------------------------
+                          Создание переменных в js  
+
+var num; - создал переменную с именем Num но ничего не записал
+var num=1.45; - со значением. также можно записывать в строки
+var bool=true; - можно проверять в условиях
+
+Пример 1
+var name = prompt ("Как вас зовут?");
+console.log ("Ваше имя" + name)
+
+Пример 2
+var firstNum = 12;
+var secondNum = 24;
+firstNum  += 12;  - сокращение используем знак вначале равно.  Чтобы добавить единицу ++ --
+
+Основные функции
+document.write ("Результат: " + firstNum + secondNum);    - посчитает как строки и объединит в 1 информацию
+document.write ("Результат: ", + firstNum + secondNum);    - запята после резултата разделяет текс и математику
+
+document.write (Math.PI + "<br>"); - можно использовать любые теги <br> <---тег 
+document.write (Math.E + "<br>");
+-----------------------------------------------------------------------
+                                   МАССИВЫ
+
+var colors = ["Red","Blue","Green"];   - отсчёт начинается с нуля 0-red 1- blue 2-green
+var colors = new array ("Red","Blue","Green"); - Второй метод записи массива
+
+colors[3]="Grey"; - добавление в  массив под номером 3 НЕ УДОБНО
+
+colors.push ("Grey"); -добавляет в конец массива колорс при помощи Push
+document.write (colors[1] + colors[2]);
+
+document.write (colors[1]);
+------------------------------------------------------------------------------------------------
+                                    ЦИКЛЫ
+
+for (var i = 0; i < 10; i++){    - цикл начинаем с 0 будем проходить пока не станет больше 10 i++ добавляет +1 каждый раз и будет до 9
+console.log (i)                     // выводим в консоль
+}
+
+
+var i = 0;
+while (i < 10) {                    цикл выполняется пока верное утверждение
+    console.log(i);                
+    i++;
+}
+
+var i=20;
+do {                   -цикл обработается 1 раз, если не верно выведется 1 раз
+i++;
+console.log (i);
+} while (i<10);
+
+
+                       ВЫВОД МАССИВА
+
+var colors = new array ("Red","Blue","Green");     - будет выводить все массивы
+for (var i = 0;  i < colors.length; i++){
+   console.log (colors [i]);
+}
+--------------------------------------------------------------------------------------
+                        ОПЕРАТОРЫ УСЛОВИЙ    
+
+if(1 == 1){
+ console.log ("1 равна 1");         // будеть выводить так как условие правильно
+}
+
+
+if(1 != 1){
+ console.log ("1 равна 1");      // не будет выводить так как условие не правильно (!=) не равно значит
+}
+
+
+if(1 != 1){
+ console.log ("1 равна 1");      // если первое не срабатывает условие автоматом выводит второе
+} else {
+ console.log ("Сработало");
+}
+
+
+
+if(1 != 1){
+ console.log ("1 равна 1");      // если первое не срабатывает проверяет второе, если второе совпадает то выводит если нет то ласт
+} else if ( 2 == 2) {
+ console.log ("2 равно 2");
+} else { 
+  console.log ("Сработало")
+}
+
+
+ ПРИМЕР 1
+var num1=24;
+var num2=49;
+if(num1 != num2){
+ console.log (num1 + " не равна " + num2);      // 
+} else if ( num1 == num2) {
+ console.log (num1 + " равно " + num2);
+} else { 
+  console.log ("Сработало")
+}
+
+
+ПРИМЕР 2          // проверяем на true
+var bool = true;
+if (bool){
+   console.log(bool + " is true");
+}
+
+var bool = false;      // проверяем на false , если 2 истины то выводит если нет то не выводит когда || выводит при 1 выполенном условие
+if (!bool && num1 = 24){
+   console.log(bool + " is false");
+}
+
+var res = 3;
+switch (res) {
+   case 1:              // проверяем на единицу res
+       alert ("Res is 1");
+      break;
+   case 2:
+       alert ("Res is 2");
+      break;
+    case 3:
+       alert ("Res is 2");
+      break;
+    default:     // как else срабатывает в случае если не выполняется
+       lert ("Res is unknown");
+}
+------------------------------------------------------
+                     Функции
+
+function write (word) {         // Функция вывода слова на экран
+     document.write (word);
+}
+write ("Hello");
+ 
+
+
+function write (a, b) {             // Выводит сумму
+       return a + b;
+} 
+
+document.write (summ (23, 34));
+---------------------------------------------------------------
+                  ОБЪЕКТЫ
+
+var person = {
+    firstName: 'Brad',
+    age: 45,
+    children: ['Liza', 'Perya'],
+      adress: {
+        street: '555 Some st',
+         city: 'Boston',
+         state: 'MA'
+  }
+}
+
+ console.log (person);   - Выводит всю инфу
+
+ console.log (person.firstName)  - выводит имя
+
+ console.log (person.adress.street); - с объекта
+
+ console.log (person.children [1]); - с массива
+
+ПРИМЕР 1
+var person = {
+    firstName: 'Brad',
+    age: 45,
+    children: ['Liza', 'Perya'],
+      adress: {
+        street: '555 Some st',
+         city: 'Boston',
+         state: 'MA'
+    }
+ NameAge: function () {
+   return this.firstname + ", age is -" + this.age;
+  }
+}   
+     console.log (person.NameAge ());
+---------------------------------------------------------------
+             КОНСТРУКТОР В СОЗДАНИЕ ОБЪЕКТОВ
+
+var apple = new Object();
+apple.color = 'green';
+apple.shape = 'round';
+
+console.log (apple.color); 
+
+apple.describe = function () {
+ return 'An apple is' + this.color;   // создали функцию и возвращаем значения выводим цвет
+}
+
+console.log (apple.describe ());   // вывод
+--------------------------------------------------------------
+ function Fruit (color, shape) {         // Функция Fruit будет получать 2 параметра color и shape
+   this.color = color;
+   this.shape = shape;
+}
+   var melon = new Fruit ('yellow', 'round');   // при создание объёкта сразу указываем параметры.
+-------------------------------------------------------------
+                 СОБЫТИЯ
+   <p id="text"> Какой нибудь текст </p>
+        <button onclick="changeColor('blue');">Синий</button>   // onclick - событие при нажатии бывают ещё
+        <button onclick="changeColor('red');">Крсаный</button>   // onmouseover - когда навёл мышку
+<script>
+function changeColor (newColor) {
+   var element = document.getElementById("text");    // можно отслеживаь по id(getElementById) По классу (getElementByСlass) по имени объектов (getElementByName)
+   element.style.color = newColor;
+}
+</script>
+----------------------------------------------------------------------
+// name - название формы;  при нажатии на submit происхоидт событие onsubmit.  дописал return могут добавлять для вызова функции
+
+<form name="myForm" action="" onsubmit="return validateForm()" method="post">  
+   Имя: <input type="text" name="fname">
+    <input type="submit" value="Submit">
+</form>
+
+<script>
+ function validateForm(){
+   var element= document.forms["myForm"]["fname"].value                      // эти переменные локальны и они только в той функции в который ты вписал
+// myform - название формы fname- название поля.  value -значение поля fname
+
+   if (element == ""){
+      alert("имя должно быть заполенно");
+      return false;              // чтобы не перезагружало страницу
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
